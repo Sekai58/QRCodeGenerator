@@ -1,17 +1,38 @@
 const form = document.getElementById("formid");
-const btn = document.getElementById("btn");
-const qrcode = document.getElementById("qrcode");
+const qr = document.getElementById("qrcode");
+
+
 
 const generate_on_click = (e) => {
-  const size = document.getElementById("size");
-  const url = document.getElementById("url");
+  e.preventDefault();
+  clearUI();
+  const size = document.getElementById("size").value;
+  const url = document.getElementById("url").value;
 
   if (url === "") {
-    alert("Please Enter URL");
+    delete window.alert; // true
+    alert('Please enter a URL');
   } else {
     showSpinner();
+    setTimeout(() => {
+      hideSpinner();
+      generateQRCode(url, size);
+    }, 1000);
   }
 };
+
+const generateQRCode = (url, size) => {
+  const qrcode = new QRCode('qrcode', {
+    text: url,
+    width: size,
+    height: size,
+  });
+};
+
+const clearUI = () => {
+  qr.innerHTML = '';
+};
+
 
 const showSpinner = () => {
   const spinner = document.getElementById("spinner");
@@ -25,4 +46,4 @@ const hideSpinner = () => {
 
 hideSpinner();
 
-btn.addEventListener("click", generate_on_click);
+form.addEventListener("submit", generate_on_click);

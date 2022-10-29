@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.1/qrcode.js"
-      integrity="sha512-hAz8pxm1kva4chZWPXQhGehvvlIj1Loka653sQXoYHNj4sgSukoR3ZKyHEOT7kFGVW17wUqD9CbKeviIJ2XFKQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <meta charset="UTF-8" />
+    <meta
+    name="keywords"
+    content="qr code, qr codes, qrcodes, create qr code, qr code generator, create qrcodes, make a qr code, online qr code"
+  />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Roboto", "ui-sans-serif"]
-            }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Roboto", "ui-sans-serif"]
           }
         }
-      };
+      }
+    };
     </script>
-    <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="js/index.js" defer></script>
+    
     <style>
       #spinner {
         display: none;
       }
     </style>
     <title>Generate QR Code</title>
-    <meta charset="UTF-8" />
   </head>
 
   <body>
@@ -50,11 +51,12 @@
               id="url"
               type="url"
               placeholder="Enter a URL"
-              class="w-full border-2 focus:outline-none text-[#1d4ed8] mb-5"
+              class="w-full border-2 focus:outline-none text-[#075985] mb-5"
+              required
             />
             <select
               id="size"
-              class="w-full border-2 text-[#262626] focus:outline-none mb-5"
+              class="w-full border-2 text-[##075985] focus:outline-none mb-5"
             >
               <option value="100">100x100</option>
               <option value="200" selected>200x200</option>
@@ -65,11 +67,11 @@
               <option value="700">700x700</option>
             </select>
             <button
-              id="btn"
-              class="transition ease-in-out delay-150 bg-[#14b8a6] text-[#1d4ed8] hover:-translate-y-1 hover:scale-90 hover:bg-[#64748b] duration-300 w-full rounded-md"
-            >
-              Generate QR Code
-            </button>
+            class="bg-[#14b8a6] rounded w-full text-[#1d4ed8] py-3 px-4 mt-5 hover:bg-[#5eead4] hover:text-[#075985]"
+            type="submit"
+          >
+            Generate QR Code
+          </button>
           </form>
         </div>
       </div>
